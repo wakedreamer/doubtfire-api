@@ -237,8 +237,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_15_042412) do
     t.string "exit_message_good"
     t.string "exit_message_resubmit"
     t.bigint "task_definition_id"
-    t.bigint "feedback_comment_template_id"
-    t.index ["feedback_comment_template_id"], name: "index_stages_on_feedback_comment_template_id"
     t.index ["task_definition_id"], name: "index_stages_on_task_definition_id"
   end
 
