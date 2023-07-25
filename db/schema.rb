@@ -67,7 +67,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_03_064217) do
     t.string "unresolved_message_text"
     t.bigint "criterion_id"
     t.bigint "task_status_id"
+    t.string "outcome_status"
+    t.bigint "feedback_comment_template_id"
     t.index ["criterion_id"], name: "index_criterion_options_on_criterion_id"
+    t.index ["feedback_comment_template_id"], name: "index_criterion_options_on_feedback_comment_template_id"
     t.index ["task_status_id"], name: "index_criterion_options_on_task_status_id"
   end
 
