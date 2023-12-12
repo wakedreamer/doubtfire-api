@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_25_065421) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_09_055219) do
   create_table "activity_types", charset: "utf8mb3", collation: "utf8mb3_unicode_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "abbreviation", null: false
@@ -68,9 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_25_065421) do
     t.bigint "criterion_id"
     t.bigint "task_status_id"
     t.string "outcome_status"
-    t.bigint "feedback_comment_template_id"
     t.index ["criterion_id"], name: "index_criterion_options_on_criterion_id"
-    t.index ["feedback_comment_template_id"], name: "index_criterion_options_on_feedback_comment_template_id"
     t.index ["task_status_id"], name: "index_criterion_options_on_task_status_id"
   end
 
@@ -85,9 +83,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_25_065421) do
   create_table "feedback_comment_templates", charset: "utf8mb4", collation: "utf8mb4_general_ci", force: :cascade do |t|
     t.string "comment_text_situation", null: false
     t.string "comment_text_next_action"
-    t.bigint "criterion_option_id"
     t.bigint "user_id"
-    t.index ["criterion_option_id"], name: "index_feedback_comment_templates_on_criterion_option_id"
     t.index ["user_id"], name: "index_feedback_comment_templates_on_user_id"
   end
 
